@@ -4,7 +4,7 @@ st.set_page_config(page_title="متجري الاكتروني",page_icon="🏪")
 
 st.title("🏪متجري اﻻكتروني الاحترافي")
 st.write("مرحبا بك! تصفح منتجاتنا المميزة وقم بالشراء مباشرة:")
-st.markodown("---")
+st.markdown("---")
 
 #المنتج الاول
 st.header("📱هاتف ذكي حديت")
