@@ -1,3 +1,4 @@
+
 import streamlit as st
 
 #الاعدادات  الاساسية للصفحة باللغة ايطالية 
@@ -21,6 +22,6 @@ st.caption("Spedizione rapido e sicura in tutta Italia con fattura legale (Parti
 st.markdown(" ")
 
 # زر الشراء التفاعلي
-if st.button("Acquista Ora 🛒",use_container_width=true):
+if st.button("Acquista Ora", use_container_width=true):
   st.success("Grazie per il tuo ordine! Il pagamento è sicuro e l'ordine è in fase di elaborazione.")
   st.balloons()
