@@ -1,15 +1,26 @@
 import streamlit as st
 
-st.set_page_config(page_title="متجري الاكتروني",page_icon="🏪")
+#الاعدادات  الاساسية للصفحة باللغة ايطالية 
+st.set_page_config(page_title="Ago Italy | Negozio Online", page_icon="🏪", layout="centered")
 
-st.title("🏪متجري اﻻكتروني الاحترافي")
-st.write("مرحبا بك! تصفح منتجاتنا المميزة وقم بالشراء مباشرة:")
+#  عنوان المتجر الرئيسي مخصص لمدينتك
+st.title("Ago Italy 🏪")
+st.subheader("Tl Tuo Negozio Online professionale a Borgomanero")
+st.write("Benvenuto! Esplora i nostri prodotti esclusivi e acquista in totale sicurezza.")
+
 st.markdown("---")
 
-#المنتج الاول
-st.header("📱هاتف ذكي حديت")
-st.image("https://unsplash.com", width=300)
-st.write("✨ مواصفات رائعة، كاميرا حترافية، وبطارية تدوم طويلا.")
-st.subheader("💰 السعر: 1500 ريال")
-if st.button("🛒 شراء الهاتف الذكي"):
-  st.success("🎉 تهانينا! تم تسجيل طلبك لشراء الهاتف بنجاح!")
+# عرض منتج تجريبي باليورو
+st.subheader("Smartphone di Ultima Generazione 📱")
+st.write("Specifiche eccezionali, fotocamera professionale con intelligenza artificiale e batteria a lunga durata. ✨")
+
+# السعر الرسمي باليورو €
+st.write("### **Prezzo: 399,00 €** 💰")
+st.caption("Spedizione rapido e sicura in tutta Italia con fattura legale (Partita IVA.")
+
+st.markdown(" ")
+
+# زر الشراء التفاعلي
+if st.button("Acquista Ora 🛒",use_container_width=true):
+  st.success("Grazie per il tuo ordine! Il pagamento è sicuro e l'ordine è in fase di elaborazione.")
+  st.balloons()
