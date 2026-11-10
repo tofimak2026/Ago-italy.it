@@ -25,3 +25,18 @@ st.markdown(" ")
 if st.button("Acquista Ora 🛒",use_container_width=True):
   st.success("Grazie per il tuo ordine! Il pagamento è sicuro e l'ordine è in fase di elaborazione.")
   st.balloons()
+import streamlit as st
+# اضف رقم البارتيتا إيفا وإيميلك العادي مكان الكلمة المكتوبة بالعربي 
+st.markdown("---") #هدا يضع خطا فاصلا 
+st.markdown(
+    """
+    <div style='text-align:centre; color: gray; font-size: 14px;'>
+        <strong>Ago Italy</strong><br
+        Sede Legale: Borgomanero (NO) , Italia<br>
+        Partita IVA: 02845350038<br>
+        Email :tnfelmakoudi799@gmail.com
+        </div>
+        """,
+        unsafe_allow_html=True
+)
+        
