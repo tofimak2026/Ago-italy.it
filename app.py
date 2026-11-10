@@ -6,7 +6,7 @@ st.set_page_config(page_title="Ago Italy | Negozio Online", page_icon="🏪", la
 
 #  عنوان المتجر الرئيسي مخصص لمدينتك Buongiorno 
 st.title("Ago Italy 🏪")
-st.subheader("Tl Tuo Negozio Online professionale a Borgomanero")
+st.subheader("Il Tuo Negozio Online professionale a Borgomanero")
 st.write("Benvenuto! Esplora i nostri prodotti esclusivi e acquista in totale sicurezza.")
 
 st.markdown("---")
