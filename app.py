@@ -31,7 +31,7 @@ st.markdown("---") #هدا يضع خطا فاصلا
 st.markdown(
     """
     <div style='text-align:centre; color: gray; font-size: 14px;'>
-        <strong>Ago Italy</strong><br
+        <strong>Ago Italy</strong><br>
         Sede Legale: Borgomanero (NO) , Italia<br>
         Partita IVA: 02845350038<br>
         Email :tnfelmakoudi799@gmail.com
