@@ -21,7 +21,7 @@ st.caption("Spedizione rapido e sicura in tutta Italia con fattura legale (Parti
 
 st.markdown(" ")
 
-# زر الشراء التفاعلي -تم إصلاحه وحدف الحروف الزائدة
-if st.button("Acquista Ora", use_container_width=true):
+# زر الشراء التفاعلي - تم إصلاحه وحدف الحروف الزائدة
+if st.button("Acquista ora",use_container_width=true):
   st.success("Grazie per il tuo ordine! Il pagamento è sicuro e l'ordine è in fase di elaborazione.")
   st.balloons()
