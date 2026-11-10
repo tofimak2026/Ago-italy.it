@@ -4,7 +4,7 @@ import streamlit as st
 #الاعدادات  الاساسية للصفحة باللغة ايطالية 
 st.set_page_config(page_title="Ago Italy | Negozio Online", page_icon="🏪", layout="centered")
 
-#  عنوان المتجر الرئيسي مخصص لمدينتك
+#  عنوان المتجر الرئيسي مخصص لمدينتك Buongiorno 
 st.title("Ago Italy 🏪")
 st.subheader("Tl Tuo Negozio Online professionale a Borgomanero")
 st.write("Benvenuto! Esplora i nostri prodotti esclusivi e acquista in totale sicurezza.")
@@ -21,7 +21,7 @@ st.caption("Spedizione rapido e sicura in tutta Italia con fattura legale (Parti
 
 st.markdown(" ")
 
-# زر الشراء التفاعلي
-if st.button("Acquista ora", use_container_width=true):
+# زر الشراء التفاعلي -تم إصلاحه وحدف الحروف الزائدة
+if st.button("Acquista Ora", use_container_width=true):
   st.success("Grazie per il tuo ordine! Il pagamento è sicuro e l'ordine è in fase di elaborazione.")
   st.balloons()
