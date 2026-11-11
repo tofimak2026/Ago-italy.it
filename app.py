@@ -45,7 +45,7 @@ if "messages" not in st.session_state:
 # عرض الرسائل السابقة مع ايقونة الوجه المبتسم الاخضر والعالم اﻻيطالي
 for message in st.session_state.messages:
   # إذا كانت الرسالة من المساعد نضع له وجه مبتسم اخضر وعالم إيطاليا، وإدا كان المستخدم نضع له أيقونة متصفح
-  avatar_icon = "🟢" if message["role"] = "assistant" else "👤"
+  avatar_icon = "🟢" if message["role"] == "assistant" else "👤"
     with st.chat_message(message["role"], avatar=avatar_icon):
         st.write(message["content"])
 
