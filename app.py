@@ -42,9 +42,11 @@ if "messages" not in st.session_state:
         {"role": "assistant", "content": "Ciao! Sono l'assistente virtuale di Ago Italy. Come posso aiutarti oggi? Posso darti informazioni sui nostri prodotti in Vera Pelle o sul pagamento alla consegna!"}
     ]
 
-# عرض الرسائل السابقة للمستخدم
+# عرض الرسائل السابقة مع ايقونة الوجه المبتسم الاخضر والعالم اﻻيطالي
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+  # إذا كانت الرسالة من المساعد نضع له وجه مبتسم اخضر وعالم إيطاليا، وإدا كان المستخدم نضع له أيقونة متصفح
+  avatar_icon = "🟢" if message["role"] = "assistant" else "👤"
+    with st.chat_message(message["role"], avatar=avatar_icon):
         st.write(message["content"])
 
 # استقبال سؤال الزبون والرد عليه تلقائياً بقواعد ذكية
@@ -61,7 +63,7 @@ if user_input := st.chat_input("Scrivi qui la tua domanda... (es. Avete il pagam
     if "consegna" in query or "contrassegno" in query or "pagare alla consegna" in query:
         reply = "Sì, assolutamente! Offriamo il servizio di **Pagamento alla Consegna (Contrassegno)** in tutta Italia senza costi aggiuntivi nascosti. Paghi direttamente al corriere quando ricevi la borsa a casa tua! 📦"
     elif "pelle" in query or "materiale" in query or "qualità" in query:
-        reply = "Tutti i nostri Cancel prodotti sono realizzati in **Vera Pelle (100% Genuine Leather) e fatti in ...**. Garantiamo la massima qualità e durata nel tempo per ogni borsa! 🇮🇹👜"
+        reply = "Tutti i nostri prodotti sono realizzati in **Vera Pelle (100% Genuine Leather) e fatti in ...**. Garantiamo la massima qualità e durata nel tempo per ogni borsa! 🇮🇹👜"
     elif "spedizione" in query or "tempo" in query or "tempi" in query:
         reply = "La spedizione in Italia è veloce e tracciabile via corriere espresso (BRT/SDA). Di lavoro impiega **24-48 ore** lavorative per arrivare a casa tua. 🚚"
     elif "prezzo" in query or "costo" in query or "quanto costa" in query:
