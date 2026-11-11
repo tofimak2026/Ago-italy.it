@@ -36,49 +36,44 @@ st.markdown("---")
 st.subheader("🤖 Assistente Virtuale - Ago Italy")
 st.write("Hai domande sui nostri prodotti o sulla spedizione? Chiedi pure al nostro assistente!")
 
-# تهيئة ذاكرة المحادثة في المتصفح لكي لا تختفي الرسائل عند التحديث
+# تهيئة ذاكرة المحادثة في المتصفح
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "Ciao! Sono l'assistente virtuale di Ago Italy. Come posso aiutarti oggi? Posso darti informazioni sui nostri prodotti in Vera Pelle o sul pagamento alla consegna!"}
     ]
 
-# عرض الرسائل السابقة مع ايقونة الوجه المبتسم الاخضر والعالم اﻻيطالي
+# عرض الرسائل السابقة مع الأيقونة الجديدة
 for message in st.session_state.messages:
-  # إذا كانت الرسالة من المساعد نضع له وجه مبتسم اخضر وعالم إيطاليا، وإدا كان المستخدم نضع له أيقونة متصفح
-  avatar_icon = "🟢" if message["role"] == "assistant" else "👤"
+    avatar_icon = "🟢" if message["role"] == "assistant" else "👤"
     with st.chat_message(message["role"], avatar=avatar_icon):
         st.write(message["content"])
 
-# استقبال سؤال الزبون والرد عليه تلقائياً بقواعد ذكية
-if user_input := st.chat_input("Scrivi qui la tua domanda... (es. Avete il pagamento alla consegna?)"):
-    # عرض سؤال المستخدم فوراً
+# استقبال سؤال الزبون والرد عليه تلقائياً
+if user_input := st.chat_input("Scrivi qui la tua domanda..."):
     st.session_state.messages.append({"role": "user", "content": user_input})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="👤"):
         st.write(user_input)
 
-    # تحويل النص إلى حروف صغيرة لتسهيل البحث عن الكلمات المفتاحية
     query = user_input.lower()
     
-    # تحديد الرد الذكي بناءً على السؤال باللغة الإيطالية
     if "consegna" in query or "contrassegno" in query or "pagare alla consegna" in query:
-        reply = "Sì, assolutamente! Offriamo il servizio di **Pagamento alla Consegna (Contrassegno)** in tutta Italia senza costi aggiuntivi nascosti. Paghi direttamente al corriere quando ricevi la borsa a casa tua! 📦"
+        reply = "Sì, assolutamente! Offriamo il servizio di **Pagamento alla Consegna (Contrassegno)** in tutta Italia senza costi aggiuntivi. Paghi direttamente al corriere quando ricevi la borsa a casa tua! 📦"
     elif "pelle" in query or "materiale" in query or "qualità" in query:
-        reply = "Tutti i nostri prodotti sono realizzati in **Vera Pelle (100% Genuine Leather) e fatti in ...**. Garantiamo la massima qualità e durata nel tempo per ogni borsa! 🇮🇹👜"
+        reply = "Tutti i nostri prodotti sono realizzati in **Vera Pelle (100% Genuine Leather) e fatti in Italia**. Garantiamo la massima qualità e durata nel tempo per ogni borsa! 🇮🇹👜"
     elif "spedizione" in query or "tempo" in query or "tempi" in query:
-        reply = "La spedizione in Italia è veloce e tracciabile via corriere espresso (BRT/SDA). Di lavoro impiega **24-48 ore** lavorative per arrivare a casa tua. 🚚"
+        reply = "La spedizione in Italia è veloce e tracciabile via corriere espresso (BRT/SDA). Di solito impiega **24-48 ore** lavorative. 🚚"
     elif "prezzo" in query or "costo" in query or "quanto costa" in query:
-        reply = "I prezzi delle nostre borse in Vera Pelle variano, ma la nostra fascia media è intorno agli **80 euro**, offrendo un rapporto qualità-prezzo imbattibile per il vero Made in Italy! 💶"
+        reply = "I prezzi delle nostre borse in Vera Pelle variano, ma la nostra fascia media è intorno agli **80 euro**, offrendo un rapporto qualità-prezzo imbattibile! 💶"
     else:
-        reply = "Grazie per la domanda! Siamo felici del tuo interesse per **Ago Italy**. Per questa richiesta specifica o per ordinare, puoi contattarci direttamente alla nostra email: **tnfelmakoudi799@gmail.com** o scriverci su WhatsApp! ✉️"
+        reply = "Grazie per la domanda! Per questa richiesta specifica o per ordinare, puoi contattarci direttamente alla nostra email legal: **tnfelmakoudi799@gmail.com** o scriverci su WhatsApp! ✉️"
 
-    # عرض رد الروبوت وحفظه في الذاكرة
     st.session_state.messages.append({"role": "assistant", "content": reply})
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="🟢"):
         st.write(reply)
 
 
 # ==========================================
-# ⚖️ ثانياً: البيانات القانونية الإلزامية في الأسفل (Footer)
+# ⚖️ ثانياً: البيانات القانونية الإلزامية (Footer)
 # ==========================================
 st.markdown("---") 
 st.markdown(
